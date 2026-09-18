@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+:root {
+  --color-brand-dark: #0b3d2e;
+  --color-brand-darker: #072a20;
+  --color-brand-emerald: #1f9d55;
+  --color-brand-emerald-light: #2bbd67;
+  --color-brand-mint: #cdefd9;
+  --color-brand-white: #ffffff;
+}
+
+@theme inline {
+  --color-brand-dark: var(--color-brand-dark);
+  --color-brand-darker: var(--color-brand-darker);
+  --color-brand-emerald: var(--color-brand-emerald);
+  --color-brand-emerald-light: var(--color-brand-emerald-light);
+  --color-brand-mint: var(--color-brand-mint);
+  --color-brand-white: var(--color-brand-white);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+}
+
+body {
+  background: var(--color-brand-dark);
+  color: var(--color-brand-white);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in-up {
+    animation: fade-in-up 0.6s ease-out both;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
